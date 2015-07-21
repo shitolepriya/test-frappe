@@ -27,6 +27,7 @@ class Page(Document):
 				self.name += '-' + str(cnt)
 
 	def validate(self):
+		from frappe import conf
 		if not getattr(conf,'developer_mode', 0):
 			frappe.throw(_("Not in Developer Mode"))
 
